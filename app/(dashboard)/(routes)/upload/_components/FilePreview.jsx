@@ -1,5 +1,5 @@
-import { Image, X } from "lucide-react";
 import React from "react";
+import { X } from "lucide-react";
 
 function FilePreview({ file, removeFile }) {
   return (
