@@ -2,7 +2,15 @@
 import React, { useEffect, useState } from "react";
 import { doc, getDoc, getFirestore } from "firebase/firestore";
 import { app } from "@/firebaseConfig";
-import { FileIcon, LinkIcon, ClipboardCopyIcon } from "lucide-react"; // Example icons, replace with actual icons library
+import { FileIcon, LinkIcon, ClipboardCopyIcon } from "lucide-react";
+
+const fileTypeMapping = {
+  "image/jpeg": "JPG",
+  "image/png": "PNG",
+  "application/pdf": "PDF",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+    "DOCX",
+};
 
 function FilePreview({ params }) {
   const db = getFirestore(app);
@@ -42,6 +50,10 @@ function FilePreview({ params }) {
     }
   };
 
+  const fileTypeLabel = file
+    ? fileTypeMapping[file.fileType] || file.fileType
+    : "";
+
   return (
     <div className="bg-gray-50 dark:bg-gray-800 lg:h-screen p-5 px-8 md:px-28">
       {loading ? (
@@ -59,7 +71,7 @@ function FilePreview({ params }) {
               <p className="flex items-center mb-2">
                 <FileIcon className="w-6 h-6 mr-2" />
                 <span className="text-pink-500 font-medium">Type:</span>{" "}
-                {file.fileType}
+                {fileTypeLabel}
               </p>
             </div>
             <div>

@@ -7,7 +7,8 @@ import {
   uploadBytesResumable,
   getDownloadURL,
 } from "firebase/storage";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
+import {  } from "firebase/firestore";
+import { getFirestore, doc, setDoc,serverTimestamp } from "firebase/firestore";
 import { app } from "@/firebaseConfig";
 import { useUser } from "@clerk/nextjs";
 import { randomGen } from "@/app/_utils/randomGen";
@@ -56,6 +57,7 @@ function Upload() {
       fileUrl: fileUrl,
       userEmail: user.primaryEmailAddress.emailAddress,
       userName: user.fullName,
+      timestamp: serverTimestamp(),
       password: "",
     });
     setFileDocId(docId);
