@@ -76,17 +76,14 @@ function Files() {
   );
 
   return (
-    <div className="bg-gray-50 dark:bg-gray-800 lg:h-screen flex flex-col">
-      <h2 className="text-[20px] text-center p-5 text-primary text-5xl border-b border-gray-400">
-        Your Files
-      </h2>
-      <div className="p-5">
+    <div className="bg-gray-50 dark:bg-gray-800 lg:h-screen flex flex-col items-center">
+      <div className="p-5 w-full max-w-md">
         <input
           type="text"
-          placeholder="Search files..."
+          placeholder="Search..."
           value={searchQuery}
           onChange={handleSearch}
-          className="px-4 py-2 rounded-md border border-gray-700 dark:border-gray-500 focus:outline-none focus:ring focus:ring-blue-200 dark:focus:ring-blue-600"
+          className="w-full px-4 py-1 rounded-md border border-gray-700 dark:border-gray-500 focus:outline-none focus:ring focus:ring-blue-200 dark:focus:ring-blue-600 text-black dark:text-white bg-white dark:bg-gray-900"
         />
       </div>
 
