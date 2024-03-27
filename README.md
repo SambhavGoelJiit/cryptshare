@@ -1,19 +1,5 @@
 ## Getting Started
 
-make '.env.local' file in root directory and add the below lines to it:
-
-```
-NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_ZWxlZ2FudC1wb255LTgwLmNsZXJrLmFjY291bnRzLmRldiQ
-CLERK_SECRET_KEY=sk_test_dmlGIfItd6c5yX2Pn5Jt2liknRRaJMl2i2NpmmR8Bg
-
-NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
-NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
-NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
-NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
-
-NEXT_PUBLIC_BASE_URL="http://localhost:3000/"
-```
-
 Install docker 
 run following commands in terminal inside root directory only(cryptshare) one by one:
 
