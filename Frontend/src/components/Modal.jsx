@@ -6,6 +6,30 @@ const Modal = ({ setModalOpen, contract }) => {
     await contract.allow(address);
     setModalOpen(false);
   };
+
+  const handleDisallow = async () => {
+    const address = document.querySelector(".address").value;
+    await contract.disallow(address);
+    setAccessList(
+      accessList.map((item) => {
+        if (item.user === address) {
+          return { ...item, access: false };
+        }
+        return item;
+      })
+    );
+  };
+
+  const handleSelectChange = (event) => {
+    const addressInput = document.querySelector(".address");
+    let adString = event.target.value;
+    let commaIdx = adString.indexOf(',');
+    if(commaIdx !== -1){
+      adString = adString.substring(0,commaIdx);
+    }
+    addressInput.value = adString;
+  };
+
   useEffect(() => {
     const accessList = async () => {
       const addressList = await contract.shareAccess();
@@ -35,13 +59,12 @@ const Modal = ({ setModalOpen, contract }) => {
             ></input>
           </div>
           <form id="myForm">
-            <select id="selectNumber">
+            <select id="selectNumber" onChange={handleSelectChange}>
               <option className="address">People With Access</option>
             </select>
           </form>
           <div className="footer">
-            <button
-              onClick={() => {
+            <button onClick={() => {
                 setModalOpen(false);
               }}
               id="cancelBtn"
@@ -49,6 +72,7 @@ const Modal = ({ setModalOpen, contract }) => {
               Cancel
             </button>
             <button onClick={() => sharing()}>Share</button>
+            <button onClick={() => handleDisallow()}>Disallow</button>
           </div>
         </div>
       </div>
