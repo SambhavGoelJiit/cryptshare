@@ -2,56 +2,20 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.App-inline {
+  border: 1px solid gray;
+  border-radius: 5px;
+  backdrop-filter: blur(8px);
+  margin-top: 15px;
+  padding-top: 45px;
 }
 
 .App-link {
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-html {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-}
-
-.bg {
-  bottom: 0;
-  left: -50%;
-  opacity: 0.5;
-  position: fixed;
-  right: -50%;
-  top: 0;
-  z-index: -1;
+.title-context {
+  font-size: 28px;
 }
 
 .content {
@@ -67,27 +31,16 @@ body {
   transform: translate(-50%, -50%);
 }
 
-h1 {
-  font-family: monospace;
-}
-
-@keyframes slide {
-  0% {
-    transform: translateX(-25%);
-  }
-  100% {
-    transform: translateX(25%);
-  }
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
-  height: 900px;
+  height: 750px;
 }
+
 header {
   text-align: center;
   width: 100%;
@@ -108,32 +61,61 @@ header .overlay {
 }
 
 h1 {
-  font-family: "Dancing Script", cursive;
+  text-align: center;
+  font-family: monospace;
   font-size: 60px;
   margin-bottom: 30px;
 }
 
 h3,
 p {
-  font-family: "Open Sans", sans-serif;
+  font-family: monospace;
+  font-size: 18px;
   margin-bottom: 30px;
 }
+
 .share {
-  padding: 16px;
-  margin-top: 10px;
-  vertical-align: center;
-  background: #f44336;
-  width: 70px;
-  height: 45px;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  font-size: 13px;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: rgba(214, 52, 52, 0.753);
+	box-shadow: 0 15px 15px rgba(130, 130, 130, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+  transition: 0.5s;
+	backdrop-filter: blur(15px);
   z-index: -1;
 }
 
+.share::before {
+  content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+	transform: skewX(45deg) translate(0);
+	transition: 1s;
+	filter: blur(0px);
+}
+
+.share:hover::before {
+  background: rgb(255, 0, 0);
+  background: linear-gradient(0deg,rgb(120, 13, 13) 100%, rgb(221, 55, 55) 0%);
+  transform: skewX(45deg) translate(200px);
+}
+
 .share:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  transition: 0.5s;
+  -webkit-animation: btn-content 1s;
+  animation: btn-content 1s;
+  outline: 0.1em solid transparent;
+  outline-offset: 0.2em;
+  box-shadow: 0 0 0.4em 0 var(--color-background);
 }

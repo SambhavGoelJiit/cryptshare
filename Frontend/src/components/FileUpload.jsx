@@ -58,7 +58,7 @@ const FileUpload = ({ contract, account }) => {
           name="data"
           onChange={retrieveFile}
         />
-        <span className="textArea">Image: {fileName}</span>
+        <span className="textArea">Document: {fileName}</span>
         <button type="submit" className="upload" disabled={!file}>
           Upload File
         </button>

@@ -1,51 +1,80 @@
-.top {
-    margin: 40px;
-  }
-  
-  input[type="file"] {
-    display: none;
-  }
-  
-  .choose {
-    background-color: initial;
-    background-image: linear-gradient(-180deg, #5aff15, #00b712);
-    border-radius: 6px;
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 6px;
-    margin-right: 10px;
-    padding-bottom: 10px;
-  }
-  .choose:hover {
-    box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
-  }
-  .textArea {
-    color: white;
-  }
-  
-  .upload {
-    border: 1px solid #13aa52;
-    background-color: #13aa52;
-    color: #ffffff;
-    padding: 5px 10px;
-    border-radius: 6px;
-    margin-left: 10px;
-  }
-  
-  .upload:hover {
-    border: 1px solid #13aa52;
-    background-color: #a5efc1;
-    color: #ffffff;
-    padding: 5px 10px;
-  }
-  
-  .upload:disabled,
-  .upload[disabled] {
-    border: 1px solid #999999;
-    background-color: #cccccc;
-    color: #666666;
-  }
-  
-  div {
-    padding: 5px 10px;
-  }
+.top, .form {
+  margin: 40px;
+  display: flex;
+  flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.choose {
+  background: rgba(52, 181, 236, 0.365);
+	box-shadow: 0 15px 15px rgba(130, 130, 130, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 15px;
+  margin-right: 25px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+  transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+
+.choose::before {
+  content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to left, rgba(255, 255, 255, 0.15), transparent);
+	transform: skewX(45deg) translate(0);
+	transition: 0.5s;
+	filter: blur(0px);
+}
+
+.choose:hover::before {
+  background: rgb(0,3,255);
+  background: linear-gradient(0deg,rgba(2,126,251,1) 100%, rgba(0,3,255,1) 0%);
+  transform: skewX(45deg) translate(200px);
+}
+
+.textArea {
+  padding: 15px;
+  color: palegoldenrod;
+  font-size: 1.1rem;
+}
+
+.upload {
+  background: rgb(0, 173, 101);
+	box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 30px;
+	padding: 15px;
+  margin-left: 75px;
+	letter-spacing: 1px;
+	text-decoration: none;
+	overflow: hidden;
+	color: #fff;
+	font-weight: 400px;
+  transition: 0.5s;
+	backdrop-filter: blur(15px);
+}
+
+.upload:disabled,
+.upload[disabled] {
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+div {
+  padding: 5px 10px;
+}

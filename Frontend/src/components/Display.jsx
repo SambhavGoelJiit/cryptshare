@@ -37,17 +37,17 @@ const Display = ({ contract, account }) => {
       setData(images);
     }
     else {
-      alert("No image to display");
+      alert("No Documents to display");
     }
   };
   return (
     <>
       <div className="image-list">{data}</div>
-      <input
-        type="text"
-        placeholder="Enter Address"
-        className="address"
-      ></input>
+        <input
+          type="text"
+          placeholder="Enter Address"
+          className="address"
+        ></input>
       <button className="center button" onClick={getdata}>
         Get Data
       </button>

@@ -42,25 +42,31 @@ function App() {
 
   return (
     <>
-    {!modalOpen && (
-      <button className='share' onClick={()=>setModalOpen(true)}>Share</button>
-    )}
-    {
-      modalOpen && (
-        <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
-      )
-    }
-    <div className='App'>
-       <h1 style={{color: "wheat"}}>CryptShare</h1>
-       <div className="bg"></div>
+      <h1  style={{ color: "white" }}>CryptShare: <span className='title-context'>A Decentralised Document Sharing Platform</span></h1>
+      <div className="App">
+        <div className='App-inline'>
 
-       <p style={{color: "wheat"}}>
-        Account : {account}
-       </p>
+        <p style={{ color: "white" }}>
+          Account : {account ? account : "Not connected"}
+        </p>
 
-       <FileUpload account={account} contract={contract}></FileUpload>
-       <Display account={account} contract={contract}></Display>
-    </div>
+        
+        <FileUpload
+          account={account}
+          provider={provider}
+          contract={contract}
+        ></FileUpload>
+        {!modalOpen && (
+          <button className="share" onClick={() => setModalOpen(true)}>
+            Share
+          </button>
+        )}
+        {modalOpen && (
+          <Modal setModalOpen={setModalOpen} contract={contract}></Modal>
+        )}
+        <Display contract={contract} account={account}></Display>
+        </div>
+      </div>
     </>
   )
 }
