@@ -87,6 +87,14 @@ Documents are encrypted using AES-256 before being uploaded to IPFS. The encrypt
 - **Smart Contracts:** Document Manager and User Manager contracts.
 - **IPFS Integration:** IPFS API for document storage and retrieval.
 
+![](images/0.png)
+![](images/1.png)
+![](images/2.png)
+![](images/3.png)
+![](images/4.png)
+![](images/5.png)
+![](images/6.png)
+
 ## Findings, Conclusions, and Future Work
 ### Findings and Results
 - **Performance:** CryptShare demonstrated efficient document upload, storage, and retrieval with minimal latency.
@@ -99,10 +107,3 @@ CryptShare successfully addresses the limitations of centralized document sharin
 - **Scalability Improvements:** Optimizing smart contracts and IPFS integration for large-scale deployments.
 - **Additional Features:** Implementing advanced access control mechanisms, such as role-based access control (RBAC).
 - **Mobile Application:** Developing a mobile version of CryptShare for enhanced accessibility.
-
-
-## Acknowledgement
-We would like to express our gratitude to our project supervisor, Dr. Arpita Jadhav Bhatt, and Jaypee Institute of Information Technology, Noida, for the opportunity to work on this project. We also thank our friends for their support during the project.
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
