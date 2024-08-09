@@ -3,12 +3,6 @@
 ## Project Overview
 CryptShare is a decentralized platform for secure document sharing, leveraging blockchain technology (Ethereum) and IPFS (InterPlanetary File System). It ensures secure document management by eliminating reliance on centralized servers, enhancing security, transparency, and user control.
 
-## Team
-- **Sambhav Goel** (Enrollment No.: 21104033)
-- **Akshita Gupta** (Enrollment No.: 21104053)
-- **Megha Chauhan** (Enrollment No.: 21104057)
-- **Supervisor:** Dr. Arpita Jadhav Bhatt
-
 ## Table of Contents
 1. [Introduction](#introduction)
 2. [Problem Statement](#problem-statement)
